@@ -1,0 +1,16 @@
+Prerequisite:
+- Qt5
+- openssl
+
+1. Install Qt into ~/Qt
+2. Build openssl
+        - download OpenSSL 1.0.1 source and unpack it
+        - cd openssl-src
+        - ./Configure --prefix=/tmp/openssl-osx darwin64-x86_64-cc
+        - make && make install
+        - move openssl-osx to sxrive-src/3rdparty/
+3. Build sxdrive and sxscout
+        - cd sxdrive-src
+        - ~/Qt/Qt-version/bin/qmake
+        - ~/Qt/Qt-version/lrelease sxdrive.pro
+        - make

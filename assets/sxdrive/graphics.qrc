@@ -1,0 +1,79 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>skylable.png</file>
+        <file>systemicon@2x.png</file>
+        <file>tray-inactive@2x.png</file>
+        <file>tray-pause@2x.png</file>
+        <file>tray-warning@2x.png</file>
+        <file>load-icon-1@2x.png</file>
+        <file>load-icon-2@2x.png</file>
+        <file>load-icon-3@2x.png</file>
+        <file>load-icon-4@2x.png</file>
+        <file>tray@2x.png</file>
+        <file>pause@2x.png</file>
+        <file>progress1.png</file>
+        <file>progress3.png</file>
+        <file>volumes-icon.png</file>
+        <file>local-dir.png</file>
+        <file>progress2.png</file>
+        <file>progress4.png</file>
+        <file>progress1of3.png</file>
+        <file>progress2of3.png</file>
+        <file>progress3of3.png</file>
+        <file>logo@2x.png</file>
+        <file>logo.png</file>
+        <file>progress1@2x.png</file>
+        <file>progress1of3@2x.png</file>
+        <file>progress2@2x.png</file>
+        <file>progress2of3@2x.png</file>
+        <file>progress3@2x.png</file>
+        <file>progress3of3@2x.png</file>
+        <file>progress4@2x.png</file>
+        <file>systemicon.png</file>
+        <file>pause.png</file>
+        <file>sxwizard@2x.png</file>
+        <file>volumes-icon@2x.png</file>
+        <file>sxwizard.png</file>
+        <file>local-dir@2x.png</file>
+        <file>pause-active.png</file>
+        <file>pause-active@2x.png</file>
+    </qresource>
+    <qresource prefix="/ani">
+        <file alias="dropframe">dropframe.gif</file>
+    </qresource>
+    <qresource prefix="/mime">
+        <file>icon-blank@2x.png</file>
+        <file>icon-code@2x.png</file>
+        <file>icon-doc@2x.png</file>
+        <file>icon-image.png</file>
+        <file>icon-movie@2x.png</file>
+        <file>icon-music@2x.png</file>
+        <file>icon-pdf@2x.png</file>
+        <file>icon-ppt@2x.png</file>
+        <file>icon-ps@2x.png</file>
+        <file>icon-xml@2x.png</file>
+        <file>icon-zip@2x.png</file>
+        <file>activity-download.png</file>
+        <file>activity-upload.png</file>
+        <file>activity-removed-l.png</file>
+        <file>activity-removed-r.png</file>
+        <file>activity-download@2x.png</file>
+        <file>activity-removed-l@2x.png</file>
+        <file>activity-removed-r@2x.png</file>
+        <file>activity-upload@2x.png</file>
+        <file>icon-image@2x.png</file>
+        <file>icon-blank.png</file>
+        <file>icon-code.png</file>
+        <file>icon-doc.png</file>
+        <file>icon-movie.png</file>
+        <file>icon-music.png</file>
+        <file>icon-pdf.png</file>
+        <file>icon-ppt.png</file>
+        <file>icon-ps.png</file>
+        <file>icon-xml.png</file>
+        <file>icon-zip.png</file>
+        <file>survey.png</file>
+        <file>survey@2x.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>

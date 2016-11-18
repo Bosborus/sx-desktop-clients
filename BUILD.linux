@@ -1,0 +1,16 @@
+Prerequisite:
+- Qt5 (Qt 5.7 is preferred to get best look on Unity and Gnome3)
+- openssl (library and headers)
+
+Build instructions:
+ $ cd sxdrive
+ $ qmake
+ $ make
+
+Install sxdrive:
+ $ cd drive-app
+ # make install
+
+Install sxscout:
+ $ cd scout-app
+ # make install

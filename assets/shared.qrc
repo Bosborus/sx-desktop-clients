@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/buttons">
+        <file>pm_pause_inactive.png</file>
+        <file>pm_pause.png</file>
+        <file>pm_remove_inactive.png</file>
+        <file>pm_remove.png</file>
+        <file>pm_resume.png</file>
+        <file>pm_settings_inactive.png</file>
+        <file>pm_settings.png</file>
+        <file>pm_start_inactive.png</file>
+        <file>pm_start.png</file>
+        <file>pm_stop.png</file>
+        <file>pm_pause_inactive@2x.png</file>
+        <file>pm_pause@2x.png</file>
+        <file>pm_remove_inactive@2x.png</file>
+        <file>pm_remove@2x.png</file>
+        <file>pm_resume@2x.png</file>
+        <file>pm_settings_inactive@2x.png</file>
+        <file>pm_settings@2x.png</file>
+        <file>pm_start_inactive@2x.png</file>
+        <file>pm_start@2x.png</file>
+        <file>pm_stop@2x.png</file>
+        <file>logs_clear.png</file>
+        <file>logs_delete.png</file>
+        <file>logs_delete@2x.png</file>
+        <file>logs_export.png</file>
+        <file>logs_export@2x.png</file>
+        <file>logs_opendir.png</file>
+        <file>logs_opendir@2x.png</file>
+        <file>logs_clear@2x.png</file>
+    </qresource>
+</RCC>

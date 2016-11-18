@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>remoteBrowser/next_normal_on.png</file>
+        <file>remoteBrowser/no_icon.png</file>
+        <file>remoteBrowser/prev_normal_on.png</file>
+        <file>remoteBrowser/home_normal_on.png</file>
+        <file>remoteBrowser/refresh_normal_on.png</file>
+        <file>remoteBrowser/settings_normal_on.png</file>
+        <file>remoteBrowser/up_normal_on.png</file>
+        <file>remoteBrowser/upload_normal_on.png</file>
+        <file>remoteBrowser/volume.png</file>
+        <file>remoteBrowser/directory.png</file>
+        <file>remoteBrowser/tasks_normal_on.png</file>
+        <file>remoteBrowser/task_upload.png</file>
+        <file>remoteBrowser/task_download.png</file>
+        <file>remoteBrowser/volume_unlocked.png</file>
+        <file>remoteBrowser/volume_locked.png</file>
+        <file>remoteBrowser/volume_unsupported.png</file>
+        <file>remoteBrowser/volume_unsupported_small.png</file>
+        <file>remoteBrowser/volume_unlocked_small.png</file>
+        <file>remoteBrowser/volume_locked_small.png</file>
+        <file>remoteBrowser/volume_small.png</file>
+    </qresource>
+</RCC>

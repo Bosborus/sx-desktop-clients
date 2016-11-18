@@ -1,0 +1,59 @@
+/*
+ *  Copyright (C) 2012-2016 Skylable Ltd. <info-copyright@skylable.com>
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 2
+ *  of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ *  Special exception for linking this software with OpenSSL:
+ *
+ *  In addition, as a special exception, Skylable Ltd. gives permission to
+ *  link the code of this program with the OpenSSL library and distribute
+ *  linked combinations including the two. You must obey the GNU General
+ *  Public License in all respects for all of the code used other than
+ *  OpenSSL. You may extend this exception to your version of the program,
+ *  but you are not obligated to do so. If you do not wish to do so, delete
+ *  this exception statement from your version.
+ */
+
+#ifndef SHARECONFIG_H
+#define SHARECONFIG_H
+
+#include "abstractshareconfig.h"
+#include <QSettings>
+#include <QMutex>
+
+class ScoutClusterConfig;
+
+class ScoutShareConfig : public AbstractShareConfig
+{
+public:
+    void saveConfig() override;
+    QString clusterToken() const override;
+    QString volumePath(const QString &) const override;
+    QStringList volumes() const override;
+    qint64 expirationTime() const override;
+    void setExpirationTime(qint64 expTime) override;
+    QString notifyEmail() const override;
+    void setNotifyEmail(const QString &email) override;
+    QByteArray sxwebCertFp() const override;
+    void setSxwebCertFp(const QByteArray &certFp) override;
+private:
+    ScoutShareConfig(ScoutClusterConfig *clusterConfig, QSettings &settings, QMutex &mutex);
+    QSettings &mSettings;
+    QMutex &mMutex;
+    ScoutClusterConfig *mClusterConfig;
+    friend class ScoutConfig;
+};
+
+#endif // SHARECONFIG_H

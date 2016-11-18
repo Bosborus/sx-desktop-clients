@@ -1,0 +1,78 @@
+From fa386f717a54515c30fd869fa361e0632ec87f67 Mon Sep 17 00:00:00 2001
+From: Pawel Kwiatkowski <pkwiatkowski@skylable.com>
+Date: Wed, 2 Nov 2016 12:53:17 +0100
+Subject: [PATCH] Add support for dragging file promise on OSX
+
+If you add 'promisedFilesTypes' mimeType in your drag QMimeData
+you will get drop location in 'dropDestination' mimeType
+
+Change-Id: I823e167a6c0fdca5bd86ff0a6d3cf24a1fb54b18
+---
+ src/plugins/platforms/cocoa/qcocoadrag.mm | 12 ++++++++++--
+ src/plugins/platforms/cocoa/qnsview.h     |  1 +
+ src/plugins/platforms/cocoa/qnsview.mm    | 16 ++++++++++++++++
+ 3 files changed, 27 insertions(+), 2 deletions(-)
+
+diff --git a/src/plugins/platforms/cocoa/qcocoadrag.mm b/src/plugins/platforms/cocoa/qcocoadrag.mm
+index 80006ae..ef8851c 100644
+--- a/src/plugins/platforms/cocoa/qcocoadrag.mm
++++ b/src/plugins/platforms/cocoa/qcocoadrag.mm
+@@ -137,8 +137,16 @@
+     NSSize mouseOffset_unused = NSMakeSize(0.0, 0.0);
+     NSPasteboard *pboard = [NSPasteboard pasteboardWithName:NSDragPboard];
+ 
+-    [theWindow dragImage:nsimage
+-        at:event_location
++    if (m_drag->mimeData()->formats().contains("promisedFilesTypes")) {
++        [pboard clearContents];
++        [pboard setPropertyList:[NSArray arrayWithObject:@"File"] forType:NSFilesPromisePboardType];
++    }
++    NSPoint dragPosition = [m_lastView convertPoint:[m_lastEvent locationInWindow]
++            fromView:nil];
++    dragPosition.x -= pmDeviceIndependentSize.width()/2;
++    dragPosition.y += pmDeviceIndependentSize.height()/2;
++    [m_lastView dragImage:nsimage
++        at:dragPosition
+         offset:mouseOffset_unused
+         event:m_lastEvent
+         pasteboard:pboard
+diff --git a/src/plugins/platforms/cocoa/qnsview.h b/src/plugins/platforms/cocoa/qnsview.h
+index 2d4ad7a..5f93445 100644
+--- a/src/plugins/platforms/cocoa/qnsview.h
++++ b/src/plugins/platforms/cocoa/qnsview.h
+@@ -139,6 +139,7 @@ Q_FORWARD_DECLARE_OBJC_CLASS(QT_MANGLE_NAMESPACE(QNSViewMouseMoveHelper));
+ 
+ - (void)registerDragTypes;
+ - (NSDragOperation)handleDrag:(id <NSDraggingInfo>)sender;
++- (NSArray *)namesOfPromisedFilesDroppedAtDestination:(NSURL*)dropDestination;
+ 
+ @end
+ 
+diff --git a/src/plugins/platforms/cocoa/qnsview.mm b/src/plugins/platforms/cocoa/qnsview.mm
+index e78cc41..7a7f289 100644
+--- a/src/plugins/platforms/cocoa/qnsview.mm
++++ b/src/plugins/platforms/cocoa/qnsview.mm
+@@ -2088,4 +2088,20 @@ - (void)draggedImage:(NSImage*) img endedAt:(NSPoint) point operation:(NSDragOpe
+     QWindowSystemInterface::handleMouseEvent(target, mapWindowCoordinates(m_window, target, qtWindowPoint), qtScreenPoint, m_buttons);
+ }
+ 
++- (NSArray *)namesOfPromisedFilesDroppedAtDestination:(NSURL*)dropDestination {
++    QUrl url = QUrl::fromNSURL(dropDestination);
++    QCocoaDrag* nativeDrag = QCocoaIntegration::instance()->drag();
++    if (nativeDrag->currentDrag()) {
++        CFURLRef cfurl = url.toCFURL();
++        CFErrorRef error = 0;
++        CFURLRef absurl = CFURLCreateFilePathURL(kCFAllocatorDefault, cfurl, &error);
++        url = QUrl::fromCFURL(absurl);
++        CFRelease(cfurl);
++        CFRelease(absurl);
++        QMimeData *mimeData = nativeDrag->currentDrag()->mimeData();
++        mimeData->setData("dropDestination", url.toEncoded());
++    }
++    return nil;
++}
++
+ @end
+-- 
+2.7.4 (Apple Git-66)
+

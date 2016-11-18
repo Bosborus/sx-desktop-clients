@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shapes/tray/load-icon-1@2x.png</file>
+        <file>shapes/tray/load-icon-2@2x.png</file>
+        <file>shapes/tray/load-icon-3@2x.png</file>
+        <file>shapes/tray/load-icon-4@2x.png</file>
+        <file>shapes/tray/tray-inactive@2x.png</file>
+        <file>shapes/tray/tray-pause@2x.png</file>
+        <file>shapes/tray/tray@2x.png</file>
+        <file>shapes/2.png</file>
+        <file>shapes/3.png</file>
+        <file>shapes/alt/background.png</file>
+        <file>shapes/alt/load-icon-1@2x.png</file>
+        <file>shapes/alt/load-icon-2@2x.png</file>
+        <file>shapes/alt/load-icon-3@2x.png</file>
+        <file>shapes/alt/load-icon-4@2x.png</file>
+        <file>shapes/alt/tray@2x.png</file>
+        <file>shapes/alt/tray-pause@2x.png</file>
+        <file>shapes/alt/tray-inactive@2x.png</file>
+    </qresource>
+</RCC>

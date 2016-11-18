@@ -1,0 +1,23 @@
+Prerequisite:
+- Visual Studio 2013/2015
+- Qt5 (use 32bit version)
+- QtCreator
+- openssl
+
+How to build openssl:
+1. Download and install  ActiveState Perl (http://www.activestate.com/ActivePerl)
+2. Download OpenSSL 1.0.1 source and unpack in c:\dev\openssl-src
+2. Open visual studio Native Tools Command Prompt (32 bit) and run commands:
+        > cd c:\dev\openssl-src
+        > perl Configure VC-WIN32 no-asm --prefix=c:\dev\openssl-win32
+        > ms\do_ms
+        > nmake -f ms\ntdll.mak
+        > nmake -f ms\ntdll.mak install
+3. Copy openssl-win32 to sxdrive-src/3rdparty/
+
+Build sxdrive:
+1. Start QtCreator
+2. Open project: sxdrive-src/sxdrive.pro
+3. Configure it to use 32 bit visual studio
+4. Run lrelease (Tools -> External -> Linguist -> Release translations)
+5. Click build button

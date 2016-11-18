@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>systemicon@2x.png</file>
+        <file>progress1of3.png</file>
+        <file>progress1of3@2x.png</file>
+        <file>systemicon.png</file>
+    </qresource>
+    <qresource prefix="/ani">
+        <file>dropframe.gif</file>
+    </qresource>
+</RCC>

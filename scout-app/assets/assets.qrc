@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/remoteBrowser">
+        <file>directory.png</file>
+        <file>file_archive.png</file>
+        <file>file_code.png</file>
+        <file>file_exe.png</file>
+        <file>file_img.png</file>
+        <file>file_installer.png</file>
+        <file>file_music.png</file>
+        <file>file_pdf.png</file>
+        <file>file_presentation.png</file>
+        <file>file_spreadsheet.png</file>
+        <file>file_text.png</file>
+        <file>file_video.png</file>
+        <file>file.png</file>
+        <file>home_normal_on.png</file>
+        <file>next_normal_on.png</file>
+        <file>no_icon.png</file>
+        <file>prev_normal_on.png</file>
+        <file>refresh_normal_on.png</file>
+        <file>settings_normal_on.png</file>
+        <file>task_cancel_small.png</file>
+        <file>task_download_small.png</file>
+        <file>task_download.png</file>
+        <file>task_upload_small.png</file>
+        <file>task_upload.png</file>
+        <file>tasks_normal_on.png</file>
+        <file>tasks_warning_on.png</file>
+        <file>up_normal_on.png</file>
+        <file>upload_normal_on.png</file>
+        <file>volume_locked_small.png</file>
+        <file>volume_locked.png</file>
+        <file>volume_small.png</file>
+        <file>volume_unlocked_small.png</file>
+        <file>volume_unlocked.png</file>
+        <file>volume_unsupported_small.png</file>
+        <file>volume_unsupported.png</file>
+        <file>volume.png</file>
+        <file>files.png</file>
+        <file>logo.png</file>
+        <file>drag_single.png</file>
+        <file>drag_multiple.png</file>
+    </qresource>
+</RCC>
